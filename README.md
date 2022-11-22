@@ -2,7 +2,7 @@
 
 ### Demo :
 
-Experience Go Music 🎵🎸[DEMO]("musicapp.amriwtf.me")
+Experience Go Music 🎵🎸[DEMO]("https:://musicapp.amriwtf.me")
 
 
 
