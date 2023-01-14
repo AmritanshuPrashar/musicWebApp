@@ -11,19 +11,18 @@ const AroundYou = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
+
+
   useEffect(() => {
     axios
-      .get(`https://geo.ipify.org/api/v2/country?apiKey=at_YGb5cW4hCIFeuIuhH7WsER2skx2dG`)
-      .then((res) => setCountry(res?.data?.location.country))
+      .get(`http://api.ipapi.com/api/161.185.160.93?access_key=77d56a827a5ca50513cf4922810cd2a2`)
+      .then((res) => setCountry("IN"))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [country]);
-
   if (isFetching && loading) return <Loader title="Loading Songs around you..." />;
 
-  if (error && country !== '') return <Error />;
-  console.log(country
-  );
+
   return (
     <div className="flex flex-col">
       <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Around you <span className="font-black">{country}</span></h2>
